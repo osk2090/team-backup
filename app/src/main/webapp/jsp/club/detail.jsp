@@ -22,6 +22,7 @@
             <input type="text" name="no" value="${club.no}" hidden>
             <input type="text" name="loginUser" value="${loginUser.no}" hidden>
             <input type="submit" value="클럽 참여">
+<%--            <button type="submit" class="btn btn-primary">클럽 참여</button>--%>
         </form>
     </c:if>
 
@@ -30,7 +31,20 @@
         <form action="report" method="post">
             <input type="text" name="no" value="${club.no}" hidden>
             <input type="text" name="clubWriterNo" value="${club.writer.no}" hidden>
+            <input type="number" name="result" value="${0}" hidden>
+
+            <p>회원님의 신고는 익명으로 처리됩니다.<br>
+                해당되는 신고 유형을 선택하기시 바랍니다.</p>
+            신고 사유:<br>
+            <input type="radio" name="reason" value="불법 또는 규체 상품 판매">불법 또는 규체 상품 판매 <br/>
+            <input type="radio" name="reason" value="지적 재산권 침해">지적 재산권 침해 <br/>
+            <input type="radio" name="reason" value="사기 또는 거짓">사기 또는 거짓 <br/>
+            <input type="radio" name="reason" value="스팸">스팸 <br/>
             <input type="submit" value="클럽 신고">
+
+        <%--            <p><a href='report'>클럽 신고</a></p>--%>
+<%--            <button type="submit" class="btn btn-primary">클럽 신고</button>--%>
+
         </form>
     </c:if>
 

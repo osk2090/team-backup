@@ -508,8 +508,7 @@ ALTER TABLE c_report
     REFERENCES c_member ( -- 여행참여자
       mno, -- 회원번호
       cno  -- 클럽게시판번호
-    )on delete cascade
-        on update cascade;
+    );
 
 
 -- 클럽사진

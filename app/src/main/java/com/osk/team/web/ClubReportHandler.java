@@ -1,7 +1,6 @@
 package com.osk.team.web;
 
 import com.osk.team.domain.Club;
-import com.osk.team.domain.Member;
 import com.osk.team.service.ClubService;
 
 import javax.servlet.ServletException;
@@ -17,34 +16,40 @@ import java.util.HashMap;
 public class ClubReportHandler extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+//        request.getRequestDispatcher("/jsp/club/report.jsp").include(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ClubService clubService = (ClubService) request.getServletContext().getAttribute("clubService");
 
         try {
             int no = Integer.parseInt(request.getParameter("no"));
-
-//            Member loginUser = (Member) request.getSession().getAttribute("loginUser");//신고자는 익명처리
             int clubWriterNo = Integer.parseInt(request.getParameter("clubWriterNo"));
+            String reason = request.getParameter("reason");//신고 사유
+            int result = Integer.parseInt(request.getParameter("result"));
+
+            Club club = new Club();
 
             System.out.println(no);
             System.out.println(clubWriterNo);
 
-            Club c = new Club();
-
             HashMap<String, Object> params = new HashMap<>();
-
+            params.put("memberNo", clubWriterNo);//클럽글 작성자 번호
             params.put("clubNo", no);
-            params.put("clubWriterNo", clubWriterNo);//클럽글 작성자 번호
+            params.put("reason", reason);
+            params.put("result", result);
+            //신고처리는 디폴트 맴퍼에서 0처리
 
-            c.setReason(request.getParameter("reason"));//신고사유작성
-            c.setResult(0);//최초 신고시에 처리여부는 디폴트 0
+//            club.setReason(request.getParameter("reason"));//신고사유작성
+//            club.setResult(0);//최초 신고시에 처리여부는 디폴트 0
 
             clubService.addWithReport(params);//신고하는 글과 작성자 번호 보내기
 
-            request.setAttribute("club", c);//신고사유와 처리여부 보내기
-
-            response.sendRedirect("report");
+            response.sendRedirect("list");
         } catch (Exception e) {
             throw new ServletException(e);
         }
