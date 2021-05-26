@@ -28,13 +28,9 @@
     <form action='update' method='post'>
         <table border='1'>
             번호: <input type='text' name='no' value='${club.no}' readonly><br>
-            방장: <input type='text' name='writer' value='${club.writer.name}' readonly><br>
-            도착지: <input type='text' name='arrive' value='${club.arrive}' readonly><br>
-            가는날: <input type='date' name='startDate' value='${club.startDate}' readonly><br>
-            오는날: <input type='date' name='endDate' value='${club.endDate}' readonly><br>
-            테마: <input name='theme' id="themeid" value='${club.theme}' readonly><br>
-            제목: <input type='text' name='title' value='${club.title}'><br>
-            내용: <textarea name='content' rows='10' cols='60'>${club.content}</textarea><br>
+            방장: <input type='text' name='writer' value='${club.writer.no}' readonly><br>
+            <!--hover 사용하기-->
+            신고 사유:
                 <tfoot>
                 <tr>
                     <td colspan='2'>

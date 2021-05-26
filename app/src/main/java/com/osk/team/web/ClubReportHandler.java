@@ -25,12 +25,17 @@ public class ClubReportHandler extends HttpServlet {
             int no = Integer.parseInt(request.getParameter("no"));
 
 //            Member loginUser = (Member) request.getSession().getAttribute("loginUser");//신고자는 익명처리
+            int clubWriterNo = Integer.parseInt(request.getParameter("clubWriterNo"));
+
+            System.out.println(no);
+            System.out.println(clubWriterNo);
+
             Club c = new Club();
 
             HashMap<String, Object> params = new HashMap<>();
 
-            params.put("memberNo", c.getWriter().getNo());//클럽글 작성자 번호
             params.put("clubNo", no);
+            params.put("clubWriterNo", clubWriterNo);//클럽글 작성자 번호
 
             c.setReason(request.getParameter("reason"));//신고사유작성
             c.setResult(0);//최초 신고시에 처리여부는 디폴트 0

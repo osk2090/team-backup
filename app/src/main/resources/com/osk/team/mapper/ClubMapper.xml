@@ -167,7 +167,7 @@
 
   <insert id="insertReport" parameterType="map">
     insert into c_report(mno, cno, c_rreason, c_rresult)
-    values (#{memberNo}, #{clubNo}, #{reason}, #{result})
+    values (#{memberNo}, #{clubNo}, #{reason}, #{0})<!--0은 아직 처리를 안했으므로 디폴트 0 삽입-->
   </insert>
 
 

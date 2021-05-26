@@ -38,8 +38,8 @@ public class ClubDetailHandler extends HttpServlet {
             List<Member> clubM = clubService.getMembers(no);
             int size = clubM.size();
 
-            System.out.println(clubM);
-            System.out.println(clubM.size());
+//            System.out.println(clubM);
+//            System.out.println(clubM.size());
 
             if (c == null) {
                 throw new Exception("해당 번호의 클럽이 없습니다.");
