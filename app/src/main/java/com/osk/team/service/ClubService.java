@@ -33,6 +33,8 @@ public interface ClubService {
 
     int addWithReport(Map<String, Object> params) throws Exception;//신고기능
 
+    int deleteMember(Map<String, Object> params) throws Exception;
+
 
 
 
@@ -40,8 +42,6 @@ public interface ClubService {
 
 
     List<Photo> getPhotos(int clubNo) throws Exception;//사진 가져옴
-
-    int deleteMembers(int clubNo) throws Exception;
 
     int updateMembers(int projectNo, List<Member> members) throws Exception;
 

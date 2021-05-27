@@ -12,11 +12,10 @@ import java.io.IOException;
 import java.util.HashMap;
 
 @SuppressWarnings("serial")
-@WebServlet("/club/join")
-public class ClubJoinHandler extends HttpServlet {
-
+@WebServlet("/club/deleteMember")
+public class ClubDeleteMemberHandler extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ClubService clubService = (ClubService) request.getServletContext().getAttribute("clubService");
 
@@ -32,7 +31,7 @@ public class ClubJoinHandler extends HttpServlet {
             params.put("memberNo", loginUser.getNo());
             params.put("clubNo", no);
 
-            clubService.addWithMember(params);
+            clubService.deleteMember(params);
             response.sendRedirect("list");
         } catch (Exception e) {
             throw new ServletException(e);

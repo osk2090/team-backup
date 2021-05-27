@@ -55,22 +55,6 @@ public class DefaultClubService implements ClubService {
 
     @Override
     public int update(Club club) throws Exception {
-//        return (int) transactionTemplate.execute(new TransactionCallback() {
-//            @Override
-//            public Object doInTransaction() throws Exception {
-//                int count = clubDao.update(club);
-//                clubDao.deleteMembers(club.getNo());
-//
-//                if (club.getMembers().size() > 0) {
-//                    HashMap<String, Object> params = new HashMap<>();
-//                    params.put("clubNo", club.getNo());
-//                    params.put("members", club.getMembers());
-//
-//                    clubDao.insertMembers(params);
-//                }
-//                return count;
-//            }
-//        });
         return clubDao.update(club);
     }
 
@@ -134,8 +118,8 @@ public class DefaultClubService implements ClubService {
 
     //현재 인원 관리파트
     @Override
-    public int deleteMembers(int clubNo) throws Exception {
-        return clubDao.deleteMembers(clubNo);
+    public int deleteMember(Map<String, Object> params) throws Exception {
+        return clubDao.deleteMember(params);
     }
 
     @Override
@@ -143,7 +127,7 @@ public class DefaultClubService implements ClubService {
         return (int) transactionTemplate.execute(new TransactionCallback() {
             @Override
             public Object doInTransaction() throws Exception {
-                clubDao.deleteMembers(clubNo);
+//                clubDao.deleteMembers(clubNo);
 
                 HashMap<String,Object> params = new HashMap<>();
                 params.put("clubNo", clubNo);

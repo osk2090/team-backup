@@ -180,10 +180,16 @@
   </insert>
 
   <!--멤버삭제-->
-  <delete id="deleteMembers" parameterType="int">
-    delete from c_member
-    where cno=#{value}
+  <delete id="deleteMember" parameterType="map">
+    delete from c_member(mno,cno)
+    values (#{memberNo}, #{clubNo})
   </delete>
+
+  <!--멤버삭제-->
+<!--  <delete id="deleteMember" parameterType="map">-->
+<!--    delete from c_member-->
+<!--    where cno=#{value}-->
+<!--  </delete>-->
 
 </mapper>
 

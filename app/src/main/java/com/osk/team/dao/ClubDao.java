@@ -32,6 +32,8 @@ public interface ClubDao {
 
     int insertReport(Map<String, Object> params) throws Exception;//신고기능 추가
 
+    int deleteMember(Map<String, Object> params) throws Exception;
+
 
 
 
@@ -44,7 +46,5 @@ public interface ClubDao {
 //    int insertMember(Member member) throws Exception;
 
     int insertMembers(Map<String, Object> params) throws Exception;
-
-    int deleteMembers(int memberNo) throws Exception;
 
 }
