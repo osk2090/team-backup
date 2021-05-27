@@ -24,17 +24,10 @@ public class Club {
     private int nowTotal;//현재참여 인원수
     private List<Object> photos;//사진
 
-    public int getNowTotal() {
-        return nowTotal;
-    }
-
-    public void setNowTotal(int nowTotal) {
-        this.nowTotal = nowTotal;
-    }
-
     //신고관련
     private String reason;//신고사유
     private int result;//신고처리 여부
+    private Date date;//신고일자
 
     @Override
     public String toString() {
@@ -53,7 +46,24 @@ public class Club {
                 ", photos=" + photos +
                 ", reason='" + reason + '\'' +
                 ", result=" + result +
+                ", date=" + date +
                 '}';
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getNowTotal() {
+        return nowTotal;
+    }
+
+    public void setNowTotal(int nowTotal) {
+        this.nowTotal = nowTotal;
     }
 
     public String getReason() {
