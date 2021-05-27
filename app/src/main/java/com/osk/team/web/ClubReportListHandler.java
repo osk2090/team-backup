@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @SuppressWarnings("serial")
@@ -40,11 +42,22 @@ public class ClubReportListHandler extends HttpServlet {
             StringBuffer sb = new StringBuffer();
             sb.append(writer);
             sb.replace(1, 3, "*");
-            System.out.println(sb);
+            String rtitle = sb + " 회원을 신고합니다.";
+
+            System.out.println(rtitle);
 
             clubs = clubService.getReports();
 
-            request.setAttribute("clubs", clubs);
+            HashMap<String, Object> params = new HashMap<>();
+            params.put("rtitle", rtitle);
+            params.put("reason", reason);
+            params.put("rresult", rresult);
+            params.put("date", date);
+
+            List<Object> reports = new ArrayList<>();
+            reports.add(params);
+
+            request.setAttribute("reports", reports);
             response.setContentType("text/html;charset=UTF-8");
             request.getRequestDispatcher("/jsp/club/reportList.jsp").include(request, response);
 

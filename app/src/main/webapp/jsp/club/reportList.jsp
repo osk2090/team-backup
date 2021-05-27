@@ -15,8 +15,6 @@
 <body>
 <h1>클럽 신고게시판</h1>
 
-<p><a href='add'>목록</a></p>
-
 <table border='1'>
     <thead>
     <tr>
@@ -28,17 +26,18 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${clubs}" var="c">
+    <c:forEach items="${reports}" var="r">
         <tr>
-            <td><a href='detail?no=${c.no}'>${c.no}</a></td>
-            <td>${c.arrive}</td>
-            <td>${c.startDate}</td>
-            <td>${c.endDate}</td>
-            <td>${c.theme}</td>
-            <td>${c.total}</td>
+            <td><a href='detail?no=${r.no}'>${r.no}</a></td>
+            <td>${r.rtitle}</td>
+            <td>${r.reason}</td>
+            <td>${r.rresult}</td>
+            <td>${r.date}</td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+<p><a href='add'>목록</a></p>
+
 </body>
 </html>
