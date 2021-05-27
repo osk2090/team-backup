@@ -34,7 +34,7 @@ public interface ClubDao {
 
     int deleteMember(Map<String, Object> params) throws Exception;
 
-
+    List<Club> findByReports(String keyword) throws Exception;
 
 
 /////////////////////////////////////////////////////////////////////

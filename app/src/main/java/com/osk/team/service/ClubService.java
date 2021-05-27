@@ -33,6 +33,8 @@ public interface ClubService {
 
     int addWithReport(Map<String, Object> params) throws Exception;//신고기능
 
+    List<Club> getReports() throws Exception;
+
     int deleteMember(Map<String, Object> params) throws Exception;
 
 

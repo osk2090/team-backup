@@ -21,7 +21,16 @@ public class Club {
     private Date startDate;//가는날
     private Date endDate;//오는날
     private int total;//인원수
+    private int nowTotal;//현재참여 인원수
     private List<Object> photos;//사진
+
+    public int getNowTotal() {
+        return nowTotal;
+    }
+
+    public void setNowTotal(int nowTotal) {
+        this.nowTotal = nowTotal;
+    }
 
     //신고관련
     private String reason;//신고사유
@@ -40,6 +49,7 @@ public class Club {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", total=" + total +
+                ", nowTotal=" + nowTotal +
                 ", photos=" + photos +
                 ", reason='" + reason + '\'' +
                 ", result=" + result +

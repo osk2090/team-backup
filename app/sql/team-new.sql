@@ -502,7 +502,8 @@ ALTER TABLE c_report
             )
             REFERENCES club ( -- 여행클럽
                              cno -- 클럽게시판번호
-                );
+                )on delete cascade
+            on update cascade;
 
 -- 여행클럽신고
 ALTER TABLE c_report
@@ -512,7 +513,8 @@ ALTER TABLE c_report
             )
             REFERENCES member ( -- 회원
                                mno -- 회원번호
-                );
+                )on delete cascade
+            on update cascade;
 
 -- 클럽사진
 ALTER TABLE c_photo

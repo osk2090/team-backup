@@ -96,6 +96,11 @@ public class DefaultClubService implements ClubService {
     }
 
     @Override
+    public List<Club> getReports() throws Exception {//신고글 가져오기
+        return clubDao.findByReports(null);
+    }
+
+    @Override
     public int deletePhotos(int clubNo) throws Exception {
         return clubDao.deletePhotos(clubNo);
     }
