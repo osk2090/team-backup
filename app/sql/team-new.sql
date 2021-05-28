@@ -471,8 +471,9 @@ ALTER TABLE c_member
                 )on delete cascade
             on update cascade;
 
+alter table c_member
+    drop constraint FK_member_TO_c_member;
 
--- 여행참여자
 ALTER TABLE c_member
     ADD CONSTRAINT FK_club_TO_c_member -- 여행클럽 -> 여행참여자
         FOREIGN KEY (
@@ -483,6 +484,9 @@ ALTER TABLE c_member
                 )on delete cascade
             on update cascade;
 
+-- 여행참여자
+alter table c_member
+    drop constraint FK_club_TO_c_member;
 
 -- 게시판사진
 ALTER TABLE b_photo

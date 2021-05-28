@@ -1,6 +1,5 @@
 package com.osk.team.web;
 
-import com.osk.team.domain.Member;
 import com.osk.team.service.ClubService;
 
 import javax.servlet.ServletException;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
 
 @SuppressWarnings("serial")
 @WebServlet("/club/deleteMember")
@@ -22,16 +20,7 @@ public class ClubDeleteMemberHandler extends HttpServlet {
         try {
             int no = Integer.parseInt(request.getParameter("no"));
 
-            Member loginUser = (Member) request.getSession().getAttribute("loginUser");
-
-            System.out.println(no);
-            System.out.println(loginUser.getNo());
-
-            HashMap<String, Object> params = new HashMap<>();
-            params.put("memberNo", loginUser.getNo());
-            params.put("clubNo", no);
-
-            clubService.deleteMember(params);
+            clubService.deleteMember(no);
             response.sendRedirect("list");
         } catch (Exception e) {
             throw new ServletException(e);

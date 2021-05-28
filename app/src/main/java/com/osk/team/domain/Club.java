@@ -25,6 +25,7 @@ public class Club {
     private List<Object> photos;//사진
 
     //신고관련
+    private String rtitle;//신고제목
     private String reason;//신고사유
     private int result;//신고처리 여부
     private Date date;//신고일자
@@ -44,10 +45,19 @@ public class Club {
                 ", total=" + total +
                 ", nowTotal=" + nowTotal +
                 ", photos=" + photos +
+                ", rtitle='" + rtitle + '\'' +
                 ", reason='" + reason + '\'' +
                 ", result=" + result +
                 ", date=" + date +
                 '}';
+    }
+
+    public String getRtitle() {
+        return rtitle;
+    }
+
+    public void setRtitle(String rtitle) {
+        this.rtitle = rtitle;
     }
 
     public Date getDate() {

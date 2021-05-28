@@ -32,7 +32,7 @@ public interface ClubDao {
 
     int insertReport(Map<String, Object> params) throws Exception;//신고기능 추가
 
-    int deleteMember(Map<String, Object> params) throws Exception;
+    int deleteMember(int memberNo) throws Exception;
 
     List<Club> findByReports(String keyword) throws Exception;
 

@@ -35,7 +35,7 @@ public interface ClubService {
 
     List<Club> getReports() throws Exception;
 
-    int deleteMember(Map<String, Object> params) throws Exception;
+    int deleteMember(int memberNo) throws Exception;
 
 
 

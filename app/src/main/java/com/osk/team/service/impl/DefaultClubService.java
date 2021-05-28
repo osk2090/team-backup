@@ -123,8 +123,8 @@ public class DefaultClubService implements ClubService {
 
     //현재 인원 관리파트
     @Override
-    public int deleteMember(Map<String, Object> params) throws Exception {
-        return clubDao.deleteMember(params);
+    public int deleteMember(int memberNo) throws Exception {
+        return clubDao.deleteMember(memberNo);
     }
 
     @Override

@@ -166,17 +166,11 @@
     values(#{memberNo}, #{clubNo},#{date})
   </insert>
 
-  <!--멤버삭제 확인바람-->
-  <delete id="deleteMember" parameterType="map">
-    delete from c_member(mno,cno)
-    values (#{memberNo}, #{clubNo})
+  <!--멤버삭제-->
+  <delete id="deleteMember" parameterType="int">
+    delete from c_member
+    where mno=#{value}
   </delete>
-
-  <!--멤버삭제 확인바람-->
-<!--  <delete id="deleteMember" parameterType="int">-->
-<!--    delete from c_member-->
-<!--    where cno=#{value}-->
-<!--  </delete>-->
 
   <insert id="insertReport" parameterType="map">
     insert into c_report(mno, cno, c_rreason, c_rresult)

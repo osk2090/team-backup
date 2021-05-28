@@ -26,18 +26,24 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${reports}" var="r">
+    <c:forEach items="${clubs}" var="c">
         <tr>
-            <td><a href='detail?no=${r.no}'>${r.no}</a></td>
-            <td>${r.rtitle}</td>
-            <td>${r.reason}</td>
-            <td>${r.rresult}</td>
-            <td>${r.date}</td>
+            <td><a href='detail?no=${c.no}'>${c.no}</a></td>
+            <c:forEach items="${members}" var="m">
+                <c:if test="${m.no == c.writer.no}">
+                <td>${m.name}</td>
+                </c:if>
+            </c:forEach>
+            <td>${c.reason}</td>
+            <td>
+                <c:if test="${c.result == 0}">미처리</c:if>
+                <c:if test="${c.result == 1}">처리완료</c:if>
+            </td>
+            <td>${c.date}</td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 <p><a href='add'>목록</a></p>
-
 </body>
 </html>
