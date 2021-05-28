@@ -396,8 +396,7 @@ ALTER TABLE club
             )
             REFERENCES member ( -- 회원
                                mno -- 회원번호
-                )on delete cascade
-            on update cascade;
+                );
 
 
 -- 게시글
@@ -468,8 +467,7 @@ ALTER TABLE c_member
             )
             REFERENCES member ( -- 회원
                                mno -- 회원번호
-                )on delete cascade
-            on update cascade;
+                );
 
 alter table c_member
     drop constraint FK_member_TO_c_member;
@@ -481,8 +479,7 @@ ALTER TABLE c_member
             )
             REFERENCES club ( -- 여행클럽
                              cno -- 클럽게시판번호
-                )on delete cascade
-            on update cascade;
+                );
 
 -- 여행참여자
 alter table c_member
@@ -506,8 +503,7 @@ ALTER TABLE c_report
             )
             REFERENCES club ( -- 여행클럽
                              cno -- 클럽게시판번호
-                )on delete cascade
-            on update cascade;
+                );
 
 -- 여행클럽신고
 ALTER TABLE c_report
@@ -517,8 +513,7 @@ ALTER TABLE c_report
             )
             REFERENCES member ( -- 회원
                                mno -- 회원번호
-                )on delete cascade
-            on update cascade;
+                );
 
 -- 클럽사진
 ALTER TABLE c_photo
@@ -528,5 +523,48 @@ ALTER TABLE c_photo
             )
             REFERENCES club ( -- 여행클럽
                              cno -- 클럽게시판번호
-                )on delete cascade
+                );
+
+
+
+
+alter table c_photo drop constraint FK_club_TO_c_photo;
+
+alter table c_photo add constraint FK_club_TO_c_photo
+    foreign key (cno) references club (cno)
+        on delete cascade
+        on update cascade;
+
+
+alter table c_member add constraint FK_member_TO_c_member
+    foreign key (mno) references member (mno)
+        on delete cascade
+        on update cascade;
+
+alter table c_member drop constraint FK_member_TO_c_member;
+
+
+
+alter table c_member
+    add constraint FK_club_TO_c_member
+        foreign key (cno) references club (cno)
+            on delete cascade
             on update cascade;
+
+alter table c_member drop constraint FK_club_TO_c_member;
+
+
+alter table c_report drop constraint FK_club_TO_c_report;
+
+alter table c_report add constraint FK_club_TO_c_report
+    foreign key (cno) references club (cno)
+        on delete cascade
+        on update cascade;
+
+
+alter table c_report drop constraint FK_member_TO_c_report;
+
+alter table c_report add constraint FK_member_TO_c_report
+    foreign key (mno) references member (mno)
+        on delete cascade
+        on update cascade;
