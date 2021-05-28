@@ -172,6 +172,12 @@
     values (#{memberNo}, #{clubNo})
   </delete>
 
+  <!--멤버삭제 확인바람-->
+<!--  <delete id="deleteMember" parameterType="int">-->
+<!--    delete from c_member-->
+<!--    where cno=#{value}-->
+<!--  </delete>-->
+
   <insert id="insertReport" parameterType="map">
     insert into c_report(mno, cno, c_rreason, c_rresult)
     values (#{memberNo}, #{clubNo}, #{reason}, #{result})
@@ -210,21 +216,6 @@
 <!--    where cr.cno = #{value}-->
 <!--    order by c.cno desc-->
 <!--  </select>-->
-
-
-  <select id="findByKeyword" resultMap="clubMap" parameterType="map">
-    <include refid="select1"/>
-    <if test="value != null">
-      where
-      c.carrive like concat('%', #{value},'%')
-      or c.csdt like concat('%', #{value},'%')
-      or c.cedt like concat('%', #{value},'%')
-      or c.ctheme like concat('%', #{value},'%')
-    </if>
-    order by c.cno desc
-  </select>
-
-
 
   <insert id="insertMembers" parameterType="map">
     insert into c_member(mno,cno,c_mdate)

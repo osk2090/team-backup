@@ -115,7 +115,6 @@ public class ClubAddHandler extends HttpServlet {
         out.println("<head>");
         out.println("<title>클럽 등록</title>");
 
-        try {
 
             clubService.add(c);
             int p_cno = clubService.getClubCno().getNo();//같은 p_cno 번호 셋팅
