@@ -115,7 +115,7 @@ public class ClubAddHandler extends HttpServlet {
         out.println("<head>");
         out.println("<title>클럽 등록</title>");
 
-
+        try {
             clubService.add(c);
             int p_cno = clubService.getClubCno().getNo();//같은 p_cno 번호 셋팅
             for (int i = 0; i < photos.size(); i++) {//반복문을 돌려서 갯수만큼 db에 저장
