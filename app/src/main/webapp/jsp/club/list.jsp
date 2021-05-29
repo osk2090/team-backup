@@ -15,7 +15,7 @@
 <body>
 <h1>Club List</h1>
 
-<p><a href='detailSearch'>참여</a></p>
+<%--<p><a href='detailSearch'>참여</a></p>--%>                     <!--수정 예정-->
 <p><a href='add'>생성</a></p>
 <p><a href='reportList'>클럽 신고게시판</a></p>
 

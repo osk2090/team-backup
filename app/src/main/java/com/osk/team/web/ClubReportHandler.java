@@ -16,12 +16,6 @@ import java.util.HashMap;
 public class ClubReportHandler extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-//        request.getRequestDispatcher("/jsp/club/report.jsp").include(request, response);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ClubService clubService = (ClubService) request.getServletContext().getAttribute("clubService");
@@ -43,9 +37,6 @@ public class ClubReportHandler extends HttpServlet {
             params.put("reason", reason);
             params.put("result", result);
             //신고처리는 디폴트 맴퍼에서 0처리
-
-//            club.setReason(request.getParameter("reason"));//신고사유작성
-//            club.setResult(0);//최초 신고시에 처리여부는 디폴트 0
 
             clubService.addWithReport(params);//신고하는 글과 작성자 번호 보내기
 
