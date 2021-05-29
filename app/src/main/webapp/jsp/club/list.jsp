@@ -15,8 +15,9 @@
 <body>
 <h1>Club List</h1>
 
-<%--<p><a href='detailSearch'>참여</a></p>--%>                     <!--수정 예정-->
-<p><a href='add'>생성</a></p>
+<input type="radio" name="select" OnClick="window.location.href='list';" checked="checked">참여
+<input type="radio" name="select" OnClick="window.location.href='add';">생성
+
 <p><a href='reportList'>클럽 신고게시판</a></p>
 
 <table border='1'>
@@ -68,6 +69,7 @@
             <tr>
                 <th>테마</th>
                 <td><select name="theme" id="theme">
+                    <option value=''></option>
                     <option value='불멍때리기'>불멍때리기</option>
                     <option value='고기파티'>고기파티</option>
                     <option value='낚시'>낚시</option>

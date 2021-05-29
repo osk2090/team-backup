@@ -30,7 +30,7 @@
         <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여불가</button>
     </c:if>
 
-    <c:if test="${not empty loginUser and loginUser.no != club.writer.no and club.total> club.nowTotal}">
+    <c:if test="${not empty loginUser and loginUser.no != club.writer.no and club.total > club.nowTotal}">
         <form action="join" method="post">
             <input type="text" name="no" value="${club.no}" hidden>
             <input type="text" name="loginUser" value="${loginUser.no}" hidden>
@@ -70,7 +70,7 @@
             테마: <input name='theme' id="themeid" value='${club.theme}' readonly><br>
             제목: <input type='text' name='title' value='${club.title}'><br>
             내용: <textarea name='content' rows='10' cols='60'>${club.content}</textarea><br>
-            인원수: ${club.total} 명 <br>
+            인원수 / 현재인원수: ${club.total} / ${club.nowTotal} <br>
             <tr>
                 <th>사진</th>
                 <c:if test="${not empty club.photos}">

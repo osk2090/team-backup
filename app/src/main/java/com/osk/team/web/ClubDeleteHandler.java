@@ -36,10 +36,11 @@ public class ClubDeleteHandler extends HttpServlet {
             }
 
             //운영자가 삭제를 하면 제제횟수+1 과 해당 글을 신고 처리 완료로 한다
-            if (loginUser.getPower() == 1) {
-                Member member = memberService.get(no);
-                setCount(member);//제제 횟수 증가 메서드 사용
-            }
+//            if (loginUser.getPower() == 1) {
+//                Member member = memberService.get(no);
+//                setCount(member);//제제 횟수 증가 메서드 사용
+//                memberService.add(member);
+//            }
 
             clubService.delete(no);
             response.sendRedirect("list");

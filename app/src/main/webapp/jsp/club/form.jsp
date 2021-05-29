@@ -53,6 +53,7 @@
     사진2: <input type="file" name="photo2"><br>
     사진3: <input type="file" name="photo3"><br>
     <input type="submit" value="등록">
+    <p><a href='list'>취소</a></p>
 </form>
 </body>
 </html>

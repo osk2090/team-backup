@@ -23,39 +23,8 @@ public class ClubReportListHandler extends HttpServlet {
         MemberService memberService = (MemberService) request.getServletContext().getAttribute("memberService");
 
         try {
-
             List<Club> clubs = null;
-//
-//            String arrive = request.getParameter("arrive");
-//            String reason = request.getParameter("reason");
-//            String result = request.getParameter("result");
-//            String date = request.getParameter("date");
-//
-//            String rresult = null;
-//            if (result.equals("0")) {
-//                rresult = "미처리";
-//            } else {
-//                rresult = "처리완료";
-//            }
-//
-//            String writer = request.getParameter("writer");
-//            StringBuffer sb = new StringBuffer();
-//            sb.append(writer);
-//            sb.replace(1, 3, "*");
-//            String rtitle = sb + " 회원을 신고합니다.";
-
-//            System.out.println(rtitle);
-
             clubs = clubService.getReports();
-
-//            HashMap<String, Object> params = new HashMap<>();
-//            params.put("rtitle", rtitle);
-//            params.put("reason", reason);
-//            params.put("rresult", rresult);
-//            params.put("date", date);
-//
-//            List<Object> reports = new ArrayList<>();
-//            reports.add(params);
 
             request.setAttribute("clubs", clubs);
             request.setAttribute("members", memberService.list(null));
