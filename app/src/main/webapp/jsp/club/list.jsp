@@ -11,43 +11,35 @@
 <html>
 <head>
     <title>Club List</title>
+    <style>
+        #background {
+            background-image: url("airplane-2619434.jpg");
+        }
+    </style>
 </head>
-<body>
-<h1>Club List</h1>
+<body id="background">
 
-<input type="radio" name="select" OnClick="window.location.href='list';" checked="checked">참여
-<input type="radio" name="select" OnClick="window.location.href='add';">생성
+<h1>Club List</h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="select" id="selectjoin" OnClick="window.location.href='list';" checked>
+    <label class="form-check-label" for="selectjoin">
+        참여
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="select" id="selectadd" OnClick="window.location.href='add';">
+    <label class="form-check-label" for="selectadd">
+        생성
+    </label>
+</div>
 
 <p><a href='reportList'>클럽 신고게시판</a></p>
-
-<table border='1'>
-    <thead>
-    <tr>
-        <th>번호</th>
-        <th>도착지</th>
-        <th>가는날</th>
-        <th>오는날</th>
-        <th>테마</th>
-        <th>인원수</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${clubs}" var="c">
-        <tr>
-            <td><a href='detail?no=${c.no}'>${c.no}</a></td>
-            <td>${c.arrive}</td>
-            <td>${c.startDate}</td>
-            <td>${c.endDate}</td>
-            <td>${c.theme}</td>
-            <td>${c.total}</td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-<%--<form action='search' method='get'>--%>
-<%--    <input type='text' name='keyword'>--%>
-<%--    <button>검색</button>--%>
-<%--</form>--%>
 
 <form method='get'>
     <fieldset>
@@ -87,5 +79,35 @@
         </table>
     </fieldset>
 </form>
+
+<table border='1'>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>도착지</th>
+        <th>가는날</th>
+        <th>오는날</th>
+        <th>테마</th>
+        <th>인원수</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${clubs}" var="c">
+        <tr>
+            <td><a href='detail?no=${c.no}'>${c.no}</a></td>
+            <td>${c.arrive}</td>
+            <td>${c.startDate}</td>
+            <td>${c.endDate}</td>
+            <td>${c.theme}</td>
+            <td>${c.total}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+<%--<form action='search' method='get'>--%>
+<%--    <input type='text' name='keyword'>--%>
+<%--    <button>검색</button>--%>
+<%--</form>--%>
+
 </body>
 </html>

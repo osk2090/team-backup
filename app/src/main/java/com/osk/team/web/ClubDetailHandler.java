@@ -34,7 +34,7 @@ public class ClubDetailHandler extends HttpServlet {
 
             Club c = clubService.get(no);
             List<Member> clubM = clubService.getMembers(no);
-            c.setNowTotal(clubM.size());//현재 참여 인원 저장
+            c.setNowTotal(clubM.size() + 1);//현재 참여 인원 저장
 
             if (c == null) {
                 throw new Exception("해당 번호의 클럽이 없습니다.");
