@@ -27,7 +27,7 @@
                             <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여중</button>
                         </c:if>
 
-                        <c:if test="${loginUser.no != cm.no and loginUser.no != club.writer.no}">
+                        <c:if test="${loginUser.no != club.writer.no}">
                             <form action="join" method="post">
                                 <input type="text" name="no" value="${club.no}" hidden>
                                 <input type="text" name="loginUser" value="${loginUser.no}" hidden>
