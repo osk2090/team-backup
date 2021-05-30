@@ -17,26 +17,66 @@
 
 <c:if test="${not empty club}">
 
-    <!--클럽참여 관련-->
-    <c:if test="${club.total != club.nowTotal}">
-        <c:forEach items="${clubMembers}" var="cm">
-            <c:if test="${loginUser.no == cm.no}">
-                <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여중</button>
-            </c:if>
-        </c:forEach>
-    </c:if>
-
-    <c:if test="${club.total == club.nowTotal and loginUser.no != club.writer.no}">
+    <c:if test="${club.total == club.nowTotal}">
         <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여불가</button>
     </c:if>
 
-    <c:if test="${not empty loginUser and loginUser.no != club.writer.no and club.total > club.nowTotal}">
-        <form action="join" method="post">
-            <input type="text" name="no" value="${club.no}" hidden>
-            <input type="text" name="loginUser" value="${loginUser.no}" hidden>
-            <input class="btn btn-primary" type="submit" value="클럽 참여">
-        </form>
+    <c:if test="${club.total > club.nowTotal}">
+        <c:forEach items="${clubMembers}" var="cm">
+                        <c:if test="${loginUser.no == cm.no}">
+                            <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여중</button>
+                        </c:if>
+
+                        <c:if test="${loginUser.no != cm.no and loginUser.no != club.writer.no}">
+                            <form action="join" method="post">
+                                <input type="text" name="no" value="${club.no}" hidden>
+                                <input type="text" name="loginUser" value="${loginUser.no}" hidden>
+                                <input class="btn btn-primary" type="submit" value="클럽 참여">
+                            </form>
+                        </c:if>
+<%--            <c:choose>--%>
+<%--                <c:set var = "check" scope = "session" value = "${0}"/>--%>
+<%--                <c:forEach items="${clubMembers}" var="cm">--%>
+<%--                <c:if test="${cm.no == loginUser.no}">--%>
+<%--                    <c:set var = "check" scope = "session" value = "${1}"/>--%>
+<%--                </c:if>--%>
+<%--                </c:forEach>--%>
+
+<%--                <c:when test="${check== 1}">--%>
+<%--                    <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여중</button>--%>
+<%--                </c:when>--%>
+
+<%--                <c:when test="${check == 0}">--%>
+<%--                <c:if test="${loginUser.no != cm.no and loginUser.no != club.writer.no}">--%>
+<%--                    <form action="join" method="post">--%>
+<%--                        <input type="text" name="no" value="${club.no}" hidden>--%>
+<%--                        <input type="text" name="loginUser" value="${loginUser.no}" hidden>--%>
+<%--                        <input class="btn btn-primary" type="submit" value="클럽 참여">--%>
+<%--                    </form>--%>
+<%--                </c:if>--%>
+<%--                </c:when>--%>
+<%--            </c:choose>--%>
+        </c:forEach>
     </c:if>
+
+    <!--클럽참여 관련-->
+    <%--    <c:forEach items="${clubMembers}" var="cm">--%>
+    <%--        <c:if test="${loginUser.no == cm.no and club.total != club.nowTotal}">--%>
+    <%--            <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여중</button>--%>
+    <%--        </c:if>--%>
+    <%--    </c:forEach>--%>
+
+    <%--    <c:if test="${club.total == club.nowTotal}">--%>
+    <%--        <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여불가</button>--%>
+    <%--    </c:if>--%>
+
+    <%--    <c:if test="${not empty loginUser and loginUser.no != club.writer.no and club.total > club.nowTotal and loginUser.no}">--%>
+    <%--        <form action="join" method="post">--%>
+    <%--            <input type="text" name="no" value="${club.no}" hidden>--%>
+    <%--            <input type="text" name="loginUser" value="${loginUser.no}" hidden>--%>
+    <%--            <input class="btn btn-primary" type="submit" value="클럽 참여">--%>
+    <%--        </form>--%>
+    <%--    </c:if>--%>
 
     <!--클럽신고 관련-->
     <c:forEach items="${clubMembers}" var="cm">
