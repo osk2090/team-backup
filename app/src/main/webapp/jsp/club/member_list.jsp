@@ -22,25 +22,22 @@
                             ${cm.tel}
 
                         <img src='${photoUrl}'>
+
+                        <c:if test="${not empty loginUser and loginUser.no == cm.no}">
                         <form action="deleteMember" method="get">
-                            <c:if test="${not empty loginUser and loginUser.no == cm.no}">
                                 <input type="text" name="no" value="${loginUser.no}" hidden>
                                 <input type="submit" value="클럽 탈퇴">
-                            </c:if>
                         </form>
+                        </c:if>
 
+                        <c:if test="${not empty loginUser and loginUser.no == club.writer.no}">
                         <form action="deleteMembers" method="get">
-                            <c:if test="${not empty loginUser and loginUser.no == club.writer.no}">
-                                <c:forEach items="${clubMembers}" var="cm">
-                                    <c:forEach items="${members}" var="m">
                                         <c:if test="${cm.no == m.no}">
-                                            <input type="text" name="no" value="${m.no}">
+                                            <input type="text" name="no" value="${cm.no}">
+                                            <input type="submit" value="클럽 강퇴">
                                         </c:if>
-                                    </c:forEach>
-                                </c:forEach>
-                                <input type="submit" value="클럽 강퇴">
-                            </c:if>
                         </form>
+                        </c:if>
                     </td>
                 </tr>
                 </tbody>

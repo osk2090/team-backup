@@ -26,7 +26,7 @@
         </c:forEach>
     </c:if>
 
-    <c:if test="${club.total == club.nowTotal}">
+    <c:if test="${club.total == club.nowTotal and loginUser.no != club.writer.no}">
         <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여불가</button>
     </c:if>
 
