@@ -1,22 +1,35 @@
 //TODO
 
-1.클럽에 참여한 인원 방장이 모두 삭제 및 참여한 본인이 탈퇴하기 기능 구현--수정완료!    외래키 찾기 / cascade 
+1.관리자권한에서 현재 회원리스트와 회원번호로 회원을 검색할 수 있는 기능 ui추가
 
-https://mins-father.tistory.com/46
 
-FK_board_TO_b_photo 제약조건명
 
-alter table b_photo drop constraint FK_board_TO_b_photo;
 
-alter table b_photo add constraint FK_board_TO_b_photo
-foreign key (bno) references board (bno)
-on delete cascade
-on update cascade;
-/////////////////////////////////////////////////////////////////////////
+2.sql no value차이
+<update id="update" parameterType="qna">
+    update qna
+    set m_qtitle = #{m_qtitle},
+        m_qcontent = #{m_qcontent}
+    where m_qno = #{no}
+  </update>
 
-하지만 지금 방장이 맴버들을 강퇴시키는 기능에서 번호가 맴버수대로 나오기때문에 버그가 발생한다 이를 수정하기 바람!-----버그 잡음
+  <delete id="delete" parameterType="int">
+    delete from qna
+    where m_qno = #{value}
+  </delete>
 
-3.클럽참여버튼 관련 버그 잡기
-4.날짜 버그 잡음---------------------
-5.클럽글 신고 창 넘어가는 기능하기--질문     디테일jsp 나누기/ 핸들러 만들기!---스프링에서 구현하기
-제제를 가하면 제제+1 및 클럽글 삭제 그리고 신고된 글은 작성자가 삭제 못하게 하기-----안됨
+3.sql문 mapper or/and 클럽
+<if test="value != null">
+where
+b.title like concat('%', #{value},'%')
+and b.content like concat('%', #{value},'%')
+and m.name like concat('%', #{value},'%')
+</if>
+
+
+
+
+4.멤버 디테일/리스트 다시 만들기 
+현재 리스트에 멤버정보 하나만 넘어오는 디테일만 구현되어 있음!
+
+5.클럽에도 작성자콜론 만들어야할 듯
