@@ -16,20 +16,20 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 
-    <!--클럽신고 관련-->
-                <form action="report" method="post">
-                    <input type="text" name="no" value="${club.no}" >
-                    <input type="text" name="clubWriterNo" value="${club.writer.no}" >
-                    <input type="number" name="result" value="${0}" >
+<!--클럽신고 관련-->
+<form action="report" method="post">
+    <input type="text" name="no" value="${club.no}" hidden>
+    <input type="text" name="clubWriterNo" value="${club.writer.no}" hidden>
+    <input type="number" name="result" value="${0}" >
 
-                    <p>회원님의 신고는 익명으로 처리됩니다.<br>
-                        해당되는 신고 유형을 선택하기시 바랍니다.</p>
-                    신고 사유:<br>
-                    <input type="radio" name="reason" value="불법 또는 규체 상품 판매">불법 또는 규체 상품 판매 <br/>
-                    <input type="radio" name="reason" value="지적 재산권 침해">지적 재산권 침해 <br/>
-                    <input type="radio" name="reason" value="사기 또는 거짓">사기 또는 거짓 <br/>
-                    <input type="radio" name="reason" value="스팸">스팸 <br/>
-                    <input class="btn btn-primary" type="submit" value="클럽 신고1">
-                </form>
+    <p>회원님의 신고는 익명으로 처리됩니다.<br>
+        해당되는 신고 유형을 선택하기시 바랍니다.</p>
+    신고 사유:<br>
+    <input type="radio" name="reason" value="불법 또는 규체 상품 판매">불법 또는 규체 상품 판매 <br/>
+    <input type="radio" name="reason" value="지적 재산권 침해">지적 재산권 침해 <br/>
+    <input type="radio" name="reason" value="사기 또는 거짓">사기 또는 거짓 <br/>
+    <input type="radio" name="reason" value="스팸">스팸 <br/>
+    <input class="btn btn-primary" type="submit" value="클럽 신고1">
+</form>
 </body>
 </html>

@@ -41,9 +41,9 @@
     <!--클럽신고 관련-->
     <c:forEach items="${clubMembers}" var="cm">
         <c:if test="${not empty loginUser and loginUser.no != club.writer.no and loginUser.no == cm.no}">
-             <form action="report1" method="post">
-                <input type="text" name="no" value="${club.no}" >
-                <input type="text" name="clubWriterNo" value="${club.writer.no}" >
+            <form action="report1" method="post">
+                <input type="text" name="no" value="${club.no}" hidden>
+                <input type="text" name="clubWriterNo" value="${club.writer.no}" hidden>
                 <input class="btn btn-primary" type="submit" value="클럽 신고">
             </form>
         </c:if>
