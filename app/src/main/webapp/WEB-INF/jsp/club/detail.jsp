@@ -24,13 +24,13 @@
                 <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여중</button>
             </c:if>
 
-            <c:if test="${loginUser.no != cm.no and loginUser.no != club.writer.no}">
-                <form action="join" method="post">
-                    <input type="text" name="no" value="${club.no}" hidden>
-                    <input type="text" name="loginUser" value="${loginUser.no}" hidden>
-                    <input class="btn btn-primary" type="submit" value="클럽 참여">
-                </form>
-            </c:if>
+<%--            <c:if test="${loginUser.no != cm.no and loginUser.no != club.writer.no}">--%>
+<%--                <form action="join" method="post">--%>
+<%--                    <input type="text" name="no" value="${club.no}" hidden>--%>
+<%--                    <input type="text" name="loginUser" value="${loginUser.no}" hidden>--%>
+<%--                    <input class="btn btn-primary" type="submit" value="클럽 참여">--%>
+<%--                </form>--%>
+<%--            </c:if>--%>
         </c:forEach>
     </c:if>
 
@@ -38,13 +38,13 @@
         <button type="button" class="btn btn-secondary btn-lg" disabled>클럽 참여불가</button>
     </c:if>
 
-<%--    <c:if test="${not empty loginUser and loginUser.no != club.writer.no and club.total > club.nowTotal}">--%>
-<%--        <form action="join" method="post">--%>
-<%--            <input type="text" name="no" value="${club.no}" hidden>--%>
-<%--            <input type="text" name="loginUser" value="${loginUser.no}" hidden>--%>
-<%--                <input class="btn btn-primary" type="submit" value="클럽 참여">--%>
-<%--        </form>--%>
-<%--    </c:if>--%>
+    <c:if test="${not empty loginUser and loginUser.no != club.writer.no and club.total > club.nowTotal}">
+        <form action="join" method="post">
+            <input type="text" name="no" value="${club.no}" hidden>
+            <input type="text" name="loginUser" value="${loginUser.no}" hidden>
+                <input class="btn btn-primary" type="submit" value="클럽 참여">
+        </form>
+    </c:if>
 
     <!--클럽신고 관련-->
     <c:forEach items="${clubMembers}" var="cm">
@@ -58,7 +58,7 @@
     </c:forEach>
 
     팀원:<br>
-    <jsp:include page="/jsp/club/member_list.jsp"/>
+    <jsp:include page="/WEB-INF/jsp/club/member_list.jsp"/>
     <form action='update' method='post'>
         <table border='1'>
             번호: <input type='text' name='no' value='${club.no}' readonly><br>
