@@ -107,18 +107,6 @@ public class ClubController {
             throw new Exception("삭제 권한이 없습니다.");
         }
 
-//            운영자가 삭제를 하면 제제횟수+1 과 해당 글을 신고 처리 완료로 한다
-//            if (loginUser.getPower() == 1) {
-//
-//                Club club = clubService.get(no);
-//                int count = club.getWriter().getCount() + 1;
-//
-//                Member member = club.getWriter();
-//                member.setCount(count);
-//
-//                memberService.update(member);
-//            }
-
         clubService.delete(no);
         return "redirect:list";
     }
@@ -212,7 +200,7 @@ public class ClubController {
         model.addAttribute("members", memberService.list(null));
     }
 
-    @RequestMapping("update")
+    @PostMapping("update")
     public String update(Club c, HttpSession session) throws Exception {
 
         Club oldClub = clubService.get(c.getNo());
