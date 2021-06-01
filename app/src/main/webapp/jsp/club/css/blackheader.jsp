@@ -10,12 +10,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <style>
-        .white {
+        .black {
             width: 1920px;
             height: 73px;
             margin: 0 0 44px;
             padding: 16px 100px 15px 83px;
-            background-color: #ffffff;
+            background-color: #20273b;
         }
 
         button.btn.btn-primary.btn-sm {
@@ -106,22 +106,22 @@
 <header>
     <div class="black">
         <div class="logo-box">
-            <img src="../../images/joinjoylogo-wh.png" alt="logo"  class="logo">
+            <img src="../../../images/joinjoylogo-bl.png" alt="logo" class="logo">
         </div>
         <div class="hotplace-box">
-            <img src="../../images/hotplace-wh.png" alt="hotplace"  class="hotplace">
+            <img src="../../../images/hotplace-bl.png" alt="hotplace" class="hotplace">
         </div>
         <div class="community-box">
-            <img src="../../images/community-wh.png" alt="community"  class="community">
+            <img src="../../../images/community-bl.png" alt="community" class="community">
         </div>
         <div class="discount-box">
-            <img src="../../images/discount-wh.png" alt="discount"  class="discount">
+            <img src="../../../images/discount-bl.png" alt="discount" class="discount">
         </div>
         <div class="qna-box">
-            <img src="../../images/qna-wh.png" alt="qna"  class="qna">
+            <img src="../../../images/qna-bl.png" alt="qna" class="qna">
         </div>
         <div class="faq-box">
-            <img src="../../images/faq-wh.png" alt="faq"  class="faq">
+            <img src="../../../images/faq-bl.png" alt="faq" class="faq">
         </div>
 
         <button type="button" class="btn btn-primary btn-sm">logout</button>

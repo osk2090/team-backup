@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 <html>
 <style>
-    <jsp:include page="/WEB-INF/jsp/club/blackheader.jsp"/>
-    <jsp:include page="/WEB-INF/jsp/club/dropbox.jsp"/>
+    <jsp:include page="/jsp/club/css/blackheader.jsp"/>
+    <jsp:include page="/jsp/club/css/dropbox.jsp"/>
 </style>
 <head>
     <title>클럽 상세</title>
@@ -55,7 +55,7 @@
     </c:forEach>
 
     팀원:<br>
-    <jsp:include page="/WEB-INF/jsp/club/member_list.jsp"/>
+    <jsp:include page="/jsp/club/member_list.jsp"/>
     <form action='update' method='post'>
         <table border='1'>
             번호: <input type='text' name='no' value='${club.no}' readonly><br>
