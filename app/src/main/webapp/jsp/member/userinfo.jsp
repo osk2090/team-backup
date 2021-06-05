@@ -11,22 +11,22 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>마이페이지</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  <link href="css/common.css" rel="stylesheet" >
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<title>마이페이지</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<link href="css/common.css" rel="stylesheet" >
 <style>
 
-
-    #rap{
-      width:500px;
-      margin-left:auto;
-      margin-right:auto;
-      text-align:center;
-      height: 100px;
-      top: 100px;
-      position: relative;
-    }
+#rap{
+    width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    height: 100px;
+    top: 100px;
+    position: relative;
+}
 
 body{
   background-color: #fff;
@@ -122,7 +122,7 @@ button.btn.btn-primary.btn-sm {
 </style>
 </head>
 <header>
-        <button type="button" class="logo-box" onclick="location.href='../app/club/list'"><img  src="../images/joinjoylogo-bl.png"></button>
+        <button type="button" class="logo-box" onclick="location.href='../app/club/main'"><img  src="../images/joinjoylogo-bl.png"></button>
         <button type="button" class="hotplace-box" onclick="location.href='../app/hotplace/list'"><img  src="../images/hotplace-bl.png"></button>
         <div class="dropdown">
             <button class="dropbtn"><img  src="../images/community-bl.png"></button>
@@ -136,8 +136,7 @@ button.btn.btn-primary.btn-sm {
          <button type="button" class="discount-box" onclick="location.href='../discount/list'"><img  src="../images/discount-bl.png"></button>
          <button type="button" class="qna-box" onclick="location.href='../qna/list'"><img  src="../images/qna-bl.png"></button>
         <button type="button" class="faq-box" onclick="location.href='../faq/list'"><img  src="../images/faq-bl.png"></button>
-         
-      <button type="button" class="btn btn-primary btn-sm">logout</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="location.href='../logout'">logout</button>
 </header>
 <body>
 
@@ -174,7 +173,9 @@ button.btn.btn-primary.btn-sm {
 </c:if>
 </body>
 </html> --%>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <div id="rap">
 <div class="container">
 
@@ -234,14 +235,14 @@ button.btn.btn-primary.btn-sm {
             </tbody>
                   <tfoot>
       <tr><td colspan='2'>
-          <input type='submit' value='회원정보변경'> <a href='member/delete?no=${member.no}'>회원탈퇴</a>
+          <input type='submit' class="btn btn-primary" value='수정'> 
+          <input type="button" value="탈퇴" class="btn btn-primary" onclick="location.href='delete?no=${member.no}'">
+<%--          <input type="button" value=">--%>
           </tfoot>
     </table>
   </form>
-    </div>
-    
 </div>
-
+</div>
 
 </body>
 </html> 
