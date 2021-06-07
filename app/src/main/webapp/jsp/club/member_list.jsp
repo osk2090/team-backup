@@ -23,12 +23,10 @@
     <c:forEach items="${clubMembers}" var="cm">
         <c:if test="${m.no == cm.no}">
 
-            <table border="" style="width: 10%;">
                 <tbody>
                 <tr style="width: 10%;">
                     <td style="width: 33%;">
 
-                        <div>
                             <c:if test="${not empty cm.photo}">
                                 <c:set var="photoUrl">../../upload/${cm.photo}_30x30.jpg</c:set>
                             </c:if>
@@ -37,7 +35,7 @@
                             </c:if>
                             <img src='${photoUrl}' class="circle">
                             멤버: ${cm.name} 님
-                        </div>
+
 
                         <c:if test="${not empty loginUser and loginUser.no == cm.no}">
                             <form action="deleteMember" method="get">
@@ -54,11 +52,9 @@
                                 </c:if>
                             </form>
                         </c:if>
-
                     </td>
                 </tr>
                 </tbody>
-            </table>
         </c:if>
     </c:forEach>
 </c:forEach>
