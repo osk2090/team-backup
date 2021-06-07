@@ -164,7 +164,7 @@
     <c:if test="${not empty club}">
 
             <!--클럽참여 관련-->
-            <div style="position: absolute; right: -35%; top: 5%;">
+            <div style="position: absolute; right:  3%; top: 5%;">
             <c:set var="exist" value="${false}"/>
             <c:if test="${club.total != club.nowTotal}">
                 <c:forEach items="${clubMembers}" var="cm">
@@ -176,13 +176,13 @@
             </c:if>
             </div>
 
-            <div style="position: absolute; right: -35%; top: 5%;">
+            <div style="position: absolute; right:  3%; top: 5%;">
             <c:if test="${club.total == club.nowTotal and loginUser.no == club.writer.no}">
                 <button type="button" class="btn btn-secondary" disabled>클럽 참여불가</button>
             </c:if>
             </div>
 
-            <div style="position: absolute; right: -35%; top: 5%;">
+            <div style="position: absolute; right: 3%; top: 5%;">
             <c:if test="${!exist and not empty loginUser and loginUser.no != club.writer.no and club.total > club.nowTotal}">
                 <form action="join" method="post">
                     <input type="text" name="no" value="${club.no}" hidden>
@@ -193,7 +193,7 @@
                 </div>
 
             <!--클럽신고 관련-->
-            <div style="position: absolute; right: -20%; top: 5%;">
+            <div style="position: absolute; right: 13%; top: 5%;">
             <c:set var="existreports" value="${false}"/>
             <c:forEach items="${reports}" var="rs">
                 <c:if test="${rs.no == club.no}">
@@ -203,7 +203,7 @@
             </c:forEach>
             </div>
 
-            <div style="position: absolute; right: -20%; top: 5%;">
+            <div style="position: absolute; right: 13%; top: 5%;">
             <c:forEach items="${clubMembers}" var="cm">
                 <c:if test="${not empty loginUser and !existreports and loginUser.no != club.writer.no and loginUser.no == cm.no}">
                     <form action="report1" method="post">
