@@ -5,7 +5,7 @@
 ###제가 담당한 서비스로는 메인기능인 클럽생성 및 관리 입니다.
 
 ##DB UML(Eclipse-exerd사용)
-![DB](/Users/osk2090/Desktop/팀프로젝트.png)
+<img src="/Users/osk2090/Desktop/팀프로젝트.png">
 ERD 모델링을 하면서 클럽참여자가 실시간으로 참여/탈퇴 또는 호스트가 강퇴를 할수 있어야 하는 점이 클럽에 대한 중점 기능입니다.
 그리고 해당 클럽의 참여자만이 해당 클럽을 신고할 수 있도록 모델링 하였습니다.
 
@@ -20,21 +20,21 @@ ERD 모델링을 하면서 클럽참여자가 실시간으로 참여/탈퇴 또�
 ##화면 및 기능 설명
 
 ###메인화면
-![메인](/Users/osk2090/Desktop/메인.JPG)
+<img src="/Users/osk2090/Desktop/메인.JPG">
 ####참여/생성 라디오 버튼으로 기능을 조정할 수 있습니다.
 
 ###클럽생성화면
-![생성](/Users/osk2090/Desktop/생성.JPG)
+<img src="/Users/osk2090/Desktop/생성.JPG">
 ####화면과 같이 작성할 수 있으며 JQuery를 사용하여 금일부터 선태할 수 있게 설정하였습니다.
 
 ###클럽디테일화면(호스트기준)
-![디테일](/Users/osk2090/Desktop/디테일.JPG)
+<img src="/Users/osk2090/Desktop/디테일.JPG">
 ####호스트는 글 수정(제목/내용)/삭제가 가능합니다.
 
 ###클럽디테일화면(맴버기준)
-![디테일2](/Users/osk2090/Desktop/디테일2.JPG)
+<img src="/Users/osk2090/Desktop/디테일2.jpeg">
 ####해당 클럽에 가입한 멤버는 오른쪽에 클럽 참여중이라는 disable 버튼이 생성되며 해당 클럽탈퇴 및 신고가능합니다.
 
 ###클럽신고화면(맴버기준)
-![신고](/Users/osk2090/Desktop/신고.jpeg)
+<img src="/Users/osk2090/Desktop/신고.jpeg">
 ####해당 클럽이 신고여부에 해당된다면 신고페이지로 이동하여 신고할 수 있습니다.
