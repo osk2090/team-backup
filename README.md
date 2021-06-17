@@ -20,21 +20,21 @@ ERD 모델링을 하면서 클럽참여자가 실시간으로 참여/탈퇴 또�
 ##화면 및 기능 설명
 
 ###메인화면
-<img src="/Users/osk2090/Desktop/메인.JPG">
+![DB](./READMEpic/메인.JPG)
 ####참여/생성 라디오 버튼으로 기능을 조정할 수 있습니다.
 
 ###클럽생성화면
-<img src="/Users/osk2090/Desktop/생성.JPG">
+![DB](./READMEpic/생성.JPG)
 ####화면과 같이 작성할 수 있으며 JQuery를 사용하여 금일부터 선태할 수 있게 설정하였습니다.
 
 ###클럽디테일화면(호스트기준)
-<img src="/Users/osk2090/Desktop/디테일.JPG">
+![DB](./READMEpic/디테일.JPG)
 ####호스트는 글 수정(제목/내용)/삭제가 가능합니다.
 
 ###클럽디테일화면(맴버기준)
-<img src="/Users/osk2090/Desktop/디테일2.JPG">
+![DB](./READMEpic/디테일2.JPG)
 ####해당 클럽에 가입한 멤버는 오른쪽에 클럽 참여중이라는 disable 버튼이 생성되며 해당 클럽탈퇴 및 신고가능합니다.
 
 ###클럽신고화면(맴버기준)
-<img src="/Users/osk2090/Desktop/신고.jpeg">
+![DB](./READMEpic/신고.jpeg)
 ####해당 클럽이 신고여부에 해당된다면 신고페이지로 이동하여 신고할 수 있습니다.
