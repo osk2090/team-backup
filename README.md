@@ -6,6 +6,7 @@
 
 ##DB UML(Eclipse-exerd사용)
 ![DB](/Users/osk2090/Desktop/팀프로젝트.png)
+<img src="/Users/osk2090/Desktop/팀프로젝트.png">
 ERD 모델링을 하면서 클럽참여자가 실시간으로 참여/탈퇴 또는 호스트가 강퇴를 할수 있어야 하는 점이 클럽에 대한 중점 기능입니다.
 그리고 해당 클럽의 참여자만이 해당 클럽을 신고할 수 있도록 모델링 하였습니다.
 
