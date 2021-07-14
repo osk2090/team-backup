@@ -37,6 +37,7 @@ war {
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.20'
 
     // 메일 발송 API/**/
     implementation 'com.sun.mail:javax.mail:1.6.2'
